@@ -1,12 +1,13 @@
 import nextcord,requests,datetime,asyncio
 from nextcord.ext import commands
 from nextcord import Embed, Color
+import config
 intents=nextcord.Intents.default()
 intents.message_content=True
 
 
 bot= commands.Bot(command_prefix="!",intents=intents)
-#/?username=suraj10&api_key=e6573c930785dcdecad6a7a18d3a48d5f1c9a31a
+
 contests=[]
 
 @commands.cooldown(1,5,commands.BucketType.user)
@@ -89,6 +90,6 @@ async def fetchContests():
 
 
 if __name__ == "__main__":
-    bot.run("MTEzMjcyNTE1ODY3OTk0MTI5MA.Gh8toa.gjbMXE_mF3TXuHTQbsZaJry-PArJy7D7F4BENw")
+    bot.run(config.botToken)
 
 
